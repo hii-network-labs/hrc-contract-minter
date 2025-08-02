@@ -1,0 +1,1613 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/HRC20Base.sol": {
+      "lastModificationDate": 1754129460017,
+      "contentHash": "8c9fa785ce286834badd996f42853d70",
+      "sourceName": "src/contracts/HRC20Base.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IHRC20.sol",
+        "./interfaces/IHRC20Metadata.sol",
+        "./interfaces/IHRC20Errors.sol",
+        "./utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20Base"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/interfaces/IHRC20.sol": {
+      "lastModificationDate": 1754129460019,
+      "contentHash": "ef2e449d48737b082aa42c13e6c8adcc",
+      "sourceName": "src/contracts/interfaces/IHRC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC20"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/interfaces/IHRC20Metadata.sol": {
+      "lastModificationDate": 1754129460018,
+      "contentHash": "aee548b1b715f984d0e48317a042c0b9",
+      "sourceName": "src/contracts/interfaces/IHRC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IHRC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC20Metadata"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/interfaces/IHRC20Errors.sol": {
+      "lastModificationDate": 1754129460019,
+      "contentHash": "5a3ae9f86164852f00d75e02c2e0bb25",
+      "sourceName": "src/contracts/interfaces/IHRC20Errors.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC20Errors"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Context.sol": {
+      "lastModificationDate": 1754129460026,
+      "contentHash": "bbd773c9b077bfdd3bf5b1b381be8672",
+      "sourceName": "src/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/test/TestToken.sol": {
+      "lastModificationDate": 1754129460023,
+      "contentHash": "25ac682d2d778554f39fdd49dcd158ba",
+      "sourceName": "src/contracts/test/TestToken.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../HRC20Base.sol",
+        "../extensions/HRC20Burnable.sol",
+        "../extensions/HRC20Pausable.sol",
+        "../extensions/HRC20Permit.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "TestToken"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/extensions/HRC20Pausable.sol": {
+      "lastModificationDate": 1754129460016,
+      "contentHash": "29e40701ff4c07421c6a9691e5b528ca",
+      "sourceName": "src/contracts/extensions/HRC20Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../HRC20Base.sol",
+        "../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20Pausable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/extensions/HRC20Burnable.sol": {
+      "lastModificationDate": 1754129460016,
+      "contentHash": "d4e2340ab9e707c375abe9d48155d256",
+      "sourceName": "src/contracts/extensions/HRC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../HRC20Base.sol",
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20Burnable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/extensions/HRC20Permit.sol": {
+      "lastModificationDate": 1754129460015,
+      "contentHash": "f50743db68eb8b49b69bd2b7f3892e18",
+      "sourceName": "src/contracts/extensions/HRC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IHRC20Permit.sol",
+        "../HRC20Base.sol",
+        "../utils/cryptography/ECDSA.sol",
+        "../utils/cryptography/EIP712.sol",
+        "../utils/Nonces.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20Permit"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1754129460023,
+      "contentHash": "f9f513babab4f3bd808689f51c3d5d9e",
+      "sourceName": "src/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/interfaces/IHRC20Permit.sol": {
+      "lastModificationDate": 1754129460018,
+      "contentHash": "ce38257f9c71eb32c50e3bf079d0ca70",
+      "sourceName": "src/contracts/interfaces/IHRC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC20Permit"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/cryptography/EIP712.sol": {
+      "lastModificationDate": 1754129460023,
+      "contentHash": "c8e86fbc7275b2372f52ce80d928952d",
+      "sourceName": "src/contracts/utils/cryptography/EIP712.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IERC5267.sol",
+        "../ShortStrings.sol",
+        "./MessageHashUtils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "EIP712"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1754129460023,
+      "contentHash": "205f3815cfe8548eac8cc7d7ede3a805",
+      "sourceName": "src/contracts/utils/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Nonces.sol": {
+      "lastModificationDate": 1754129460024,
+      "contentHash": "ab89df10036d3491c514f1e6afe01285",
+      "sourceName": "src/contracts/utils/Nonces.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Nonces"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/interfaces/IERC5267.sol": {
+      "lastModificationDate": 1754129460018,
+      "contentHash": "e742f827afe23d701a0a98cb516eb78b",
+      "sourceName": "src/contracts/interfaces/IERC5267.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IERC5267"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/ShortStrings.sol": {
+      "lastModificationDate": 1754129460026,
+      "contentHash": "6983d50dcef73aacd4e782fc1e7f6cce",
+      "sourceName": "src/contracts/utils/ShortStrings.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./StorageSlot.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ShortStrings"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/cryptography/MessageHashUtils.sol": {
+      "lastModificationDate": 1754129460024,
+      "contentHash": "e1df45342c07448b7878d5c58f80b51c",
+      "sourceName": "src/contracts/utils/cryptography/MessageHashUtils.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Strings.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "MessageHashUtils"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/StorageSlot.sol": {
+      "lastModificationDate": 1754129460024,
+      "contentHash": "6fca55b0de2a4f3a1744363a88c0858d",
+      "sourceName": "src/contracts/utils/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1754129460026,
+      "contentHash": "5c33e7f6c6d62cee0ecc8688f3e87c96",
+      "sourceName": "src/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol",
+        "./math/SafeCast.sol",
+        "./math/SignedMath.sol",
+        "./Bytes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1754129460025,
+      "contentHash": "b8cae8a8a766befaca56b5477da9d40b",
+      "sourceName": "src/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Panic.sol",
+        "./SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/math/SignedMath.sol": {
+      "lastModificationDate": 1754129460025,
+      "contentHash": "06e960c145f90dcc0259862bb5fbf779",
+      "sourceName": "src/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SignedMath"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1754129460026,
+      "contentHash": "aec04a7a349e1ff45e534781d26ca13a",
+      "sourceName": "src/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Bytes.sol": {
+      "lastModificationDate": 1754129460026,
+      "contentHash": "91822d6e34035e57e1c16f6c0c6f7328",
+      "sourceName": "src/contracts/utils/Bytes.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Bytes"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Panic.sol": {
+      "lastModificationDate": 1754129460024,
+      "contentHash": "b5cfdddd4190ac8ddda74033c5e2a3af",
+      "sourceName": "src/contracts/utils/Panic.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Panic"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/test/NoncesTest.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "9246c99b18448d93fd12cbeacf78e85c",
+      "sourceName": "src/contracts/test/NoncesTest.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Nonces.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "NoncesTest"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/HRC721.sol": {
+      "lastModificationDate": 1754129460019,
+      "contentHash": "4263cda55ba0b62543144062efca0068",
+      "sourceName": "src/contracts/nft/HRC721.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol",
+        "./utils/HRC165.sol",
+        "./interfaces/IHRC165.sol",
+        "./interfaces/IHRC721.sol",
+        "./interfaces/IHRC721Metadata.sol",
+        "./interfaces/IHRC721Errors.sol",
+        "./utils/HRC721Utils.sol",
+        "../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC721"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/utils/HRC165.sol": {
+      "lastModificationDate": 1754129460020,
+      "contentHash": "ba8bd14c6a9c3151ccd62a7e54a6e716",
+      "sourceName": "src/contracts/nft/utils/HRC165.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IHRC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC165"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/interfaces/IHRC721.sol": {
+      "lastModificationDate": 1754129460021,
+      "contentHash": "9c64e87f661cbbf59726979811757e71",
+      "sourceName": "src/contracts/nft/interfaces/IHRC721.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IHRC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC721"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/interfaces/IHRC165.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "4e82e9528316108cea000f78af257c1d",
+      "sourceName": "src/contracts/nft/interfaces/IHRC165.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC165"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/interfaces/IHRC721Metadata.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "837f4b0cce61c2c4267f5a8cfb5d73a4",
+      "sourceName": "src/contracts/nft/interfaces/IHRC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IHRC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC721Metadata"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/interfaces/IHRC721Errors.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "81b2aeb377b64683e3cef435095382d1",
+      "sourceName": "src/contracts/nft/interfaces/IHRC721Errors.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC721Errors"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/utils/HRC721Utils.sol": {
+      "lastModificationDate": 1754129460020,
+      "contentHash": "3c39e52fbc0a8605e752e0a5a294a9d8",
+      "sourceName": "src/contracts/nft/utils/HRC721Utils.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IHRC721Receiver.sol",
+        "../interfaces/IHRC721Errors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC721Utils"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/interfaces/IHRC721Receiver.sol": {
+      "lastModificationDate": 1754129460021,
+      "contentHash": "0e03564dfd6245f1fa05bc1aee51708c",
+      "sourceName": "src/contracts/nft/interfaces/IHRC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IHRC721Receiver"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/extensions/HRC721Pausable.sol": {
+      "lastModificationDate": 1754129460020,
+      "contentHash": "3c7a6d2113a8c33272e1598f39be653d",
+      "sourceName": "src/contracts/nft/extensions/HRC721Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../HRC721.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC721Pausable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/utils/Ownable.sol": {
+      "lastModificationDate": 1754129460024,
+      "contentHash": "2df84e9d7a0fd890ef8e75319a4b7c2d",
+      "sourceName": "src/contracts/utils/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/MyNFT.sol": {
+      "lastModificationDate": 1754129460021,
+      "contentHash": "d830f60bbabb9630051fb5d95946efbb",
+      "sourceName": "src/contracts/nft/MyNFT.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./HRC721.sol",
+        "./extensions/HRC721Pausable.sol",
+        "../utils/Ownable.sol",
+        "./extensions/HRC721Burnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "MyNFT"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/nft/extensions/HRC721Burnable.sol": {
+      "lastModificationDate": 1754129460020,
+      "contentHash": "0c0226a0503fe066c998557fcb9cc6b2",
+      "sourceName": "src/contracts/nft/extensions/HRC721Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Context.sol",
+        "../HRC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC721Burnable"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/HRC20TokenFull.sol": {
+      "lastModificationDate": 1754129460017,
+      "contentHash": "6d01ea49be6ef21f742479854cfe2779",
+      "sourceName": "src/contracts/HRC20TokenFull.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./HRC20Base.sol",
+        "./extensions/HRC20Burnable.sol",
+        "./extensions/HRC20Pausable.sol",
+        "./extensions/HRC20Permit.sol",
+        "./utils/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20TokenFull"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/test/ContextTest.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "8371f40a1b8333862e80ee09644a7da3",
+      "sourceName": "src/contracts/test/ContextTest.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ContextTest"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/test/PausableTest.sol": {
+      "lastModificationDate": 1754129460022,
+      "contentHash": "0cd05b2a5346322a6ecb2604d8f8a0db",
+      "sourceName": "src/contracts/test/PausableTest.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "PausableTest"
+      ]
+    },
+    "/Users/macbookairm1/Documents/backup/private-chain/hii-token-minter-v2/frontend/src/contracts/HRC20TokenStandard.sol": {
+      "lastModificationDate": 1754129460017,
+      "contentHash": "139ea4eaa3f7b3b426618994189d0705",
+      "sourceName": "src/contracts/HRC20TokenStandard.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./HRC20Base.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HRC20TokenStandard"
+      ]
+    }
+  }
+}

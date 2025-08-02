@@ -1,0 +1,37 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ContextTest",
+  "sourceName": "src/contracts/test/ContextTest.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getMsgData",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getMsgSender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060ba8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80637a6ce2e1146037578063c8e7ca2e14604a575b600080fd5b6040513381526020015b60405180910390f35b600036604051604192919060208152816020820152818360408301376000818301604090810191909152601f909201601f1916010191905056fea26469706673582212204f6dba3872258bb094dd5a76df3e1f611425b7d218b4e958041eedca11dd36c764736f6c63430008180033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80637a6ce2e1146037578063c8e7ca2e14604a575b600080fd5b6040513381526020015b60405180910390f35b600036604051604192919060208152816020820152818360408301376000818301604090810191909152601f909201601f1916010191905056fea26469706673582212204f6dba3872258bb094dd5a76df3e1f611425b7d218b4e958041eedca11dd36c764736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

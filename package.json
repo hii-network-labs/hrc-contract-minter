@@ -1,0 +1,45 @@
+{
+  "name": "hii-token-minter-v2",
+  "version": "1.0.0",
+  "description": "Frontend application to deploy HRC-20 tokens and HRC-721 NFTs on Hii Network",
+  "private": false,
+  "scripts": {
+    "dev": "cd frontend && bun run dev",
+    "build": "cd frontend && bun run build",
+    "preview": "cd frontend && bun run preview",
+    "lint": "cd frontend && bun run lint",
+    "install:frontend": "cd frontend && bun install",
+    "clean": "rm -rf frontend/dist frontend/node_modules",
+    "setup": "bun install && cd frontend && bun install",
+    "type-check": "cd frontend && bun run tsc"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "tokens",
+    "nft",
+    "hii-network",
+    "hrc20",
+    "hrc721",
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "metamask",
+    "web3"
+  ],
+  "author": "Hii Token Minter Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/hii-token-minter-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/hii-token-minter-v2/issues"
+  },
+  "homepage": "https://github.com/your-username/hii-token-minter-v2#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  }
+} 
