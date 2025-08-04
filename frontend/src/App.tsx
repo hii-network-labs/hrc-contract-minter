@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { TokenForm } from './components/TokenForm';
 import { NFTForm } from './components/NFTForm';
-import { TONMinterInfo } from './components/TONMinterInfo';
+import { HRCMinterInfo } from './components/HRCMinterInfo';
 import { DeployResultModal } from './components/DeployResult';
 import { DeployResult } from './types';
 import { useWalletContext } from './contexts/WalletContext';
@@ -156,85 +156,79 @@ const App: React.FC = () => {
           </div>
 
           {/* Content */}
-          <div className="max-w-4xl mx-auto">
-            {activeTab === 'token' ? (
-              <TokenForm onDeploySuccess={handleDeploySuccess} />
-            ) : (
-              <NFTForm onDeploySuccess={handleDeploySuccess} />
-            )}
-          </div>
-
-          {/* Info Section */}
-          <div className="mt-16 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-              {/* Hii Network Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Main Form */}
+            <div className="lg:col-span-2">
+              {activeTab === 'token' ? (
+                <TokenForm onDeploySuccess={handleDeploySuccess} />
+              ) : (
+                <NFTForm onDeploySuccess={handleDeploySuccess} />
+              )}
+            </div>
+            
+            {/* Compact Info Panel */}
+            <div className="lg:col-span-1 space-y-6">
+              <HRCMinterInfo compact={true} />
+              
+              {/* About Hii Network */}
               <div className="card-gradient">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold gradient-text mb-2">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold gradient-text mb-2">
                     About Hii Network
                   </h3>
-                  <p className="text-gray-600">Learn about the types of smart contracts you can deploy</p>
+                  <p className="text-gray-600 text-sm">Learn about the types of smart contracts you can deploy</p>
                 </div>
-                <div className="grid grid-cols-1 gap-6">
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
-                        <Coins className="w-6 h-6 text-white" />
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
+                        <Coins className="w-4 h-4 text-white" />
                       </div>
-                      <h4 className="text-xl font-semibold text-gray-900">HRC-20 Token</h4>
+                      <h4 className="text-sm font-semibold text-gray-900">HRC-20 Token</h4>
                     </div>
-                    <ul className="text-gray-700 space-y-3">
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>Compatible with ERC-20 standard</span>
+                    <ul className="text-xs text-gray-700 space-y-1">
+                      <li className="flex items-center space-x-2">
+                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                         <span>HRC-20 standard</span>
+                       </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <span>Transfer & approve functions</span>
                       </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>Supports transfer, approve, allowance</span>
-                      </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>Can add mint, burn, pause (Full version)</span>
-                      </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>Lower gas fees</span>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <span>Mint, burn, pause features</span>
                       </li>
                     </ul>
                   </div>
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                        <Image className="w-6 h-6 text-white" />
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <Image className="w-4 h-4 text-white" />
                       </div>
-                      <h4 className="text-xl font-semibold text-gray-900">HRC-721 NFT</h4>
+                      <h4 className="text-sm font-semibold text-gray-900">HRC-721 NFT</h4>
                     </div>
-                    <ul className="text-gray-700 space-y-3">
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span>Compatible with ERC-721 standard</span>
+                    <ul className="text-xs text-gray-700 space-y-1">
+                      <li className="flex items-center space-x-2">
+                         <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                         <span>HRC-721 standard</span>
+                       </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                        <span>Mint, transfer, approve</span>
                       </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span>Supports mint, transfer, approve</span>
-                      </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span>Metadata URI for each token</span>
-                      </li>
-                      <li className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span>Perfect for games and collectibles</span>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                        <span>Metadata URI support</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              
-              {/* TON Minter Info */}
-              <TONMinterInfo />
             </div>
           </div>
+
+
         </main>
 
         {/* Deploy Result Modal */}

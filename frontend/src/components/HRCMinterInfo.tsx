@@ -1,7 +1,66 @@
 import React from 'react';
 import { ExternalLink, Zap, Shield, Code, Globe } from 'lucide-react';
 
-const TONMinterInfo: React.FC = () => {
+interface HRCMinterInfoProps {
+  compact?: boolean;
+}
+
+const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
+  if (compact) {
+    return (
+      <div className="card-gradient h-fit">
+        <div className="text-center mb-6">
+          <h3 className="text-xl font-bold gradient-text mb-2">
+            Open Source Tool
+          </h3>
+          <p className="text-sm text-gray-600">Deploy HRC contracts compatible with EVM</p>
+        </div>
+        
+        <div className="space-y-4">
+          <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
+            <p className="text-sm text-gray-700 leading-relaxed mb-3">
+              Deploy <span className="font-semibold text-blue-600">HRC-20</span> and{' '}
+              <span className="font-semibold text-purple-600">HRC-721</span> contracts based on{' '}
+              <a 
+                href="https://github.com/hii-network-labs/hrc-contract-minter#token-standards" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline"
+              >
+                ERC standards
+              </a> with EVM compatibility.
+            </p>
+            
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="inline-flex items-center px-2 py-1 rounded-lg bg-blue-100 text-blue-700 text-xs font-medium">
+                <Zap className="w-3 h-3 mr-1" />
+                Low Gas Fees
+              </span>
+              <span className="inline-flex items-center px-2 py-1 rounded-lg bg-green-100 text-green-700 text-xs font-medium">
+                <Shield className="w-3 h-3 mr-1" />
+                Secure
+              </span>
+              <span className="inline-flex items-center px-2 py-1 rounded-lg bg-purple-100 text-purple-700 text-xs font-medium">
+                <Code className="w-3 h-3 mr-1" />
+                Open Source
+              </span>
+            </div>
+            
+            <a 
+              href="https://github.com/hii-network-labs/hrc-contract-minter" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium"
+            >
+              <Globe className="w-4 h-4 mr-1" />
+              View on GitHub
+              <ExternalLink className="w-3 h-3 ml-1" />
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="card-gradient">
       <div className="text-center mb-8">
@@ -19,7 +78,7 @@ const TONMinterInfo: React.FC = () => {
             <span className="font-semibold text-purple-600">HRC-721</span> smart contracts on Hii Network. 
             These contracts are based on{' '}
             <a 
-              href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/" 
+              href="https://github.com/hii-network-labs/hrc-contract-minter#token-standards" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
@@ -166,4 +225,4 @@ const TONMinterInfo: React.FC = () => {
   );
 };
 
-export { TONMinterInfo };
+export { HRCMinterInfo };

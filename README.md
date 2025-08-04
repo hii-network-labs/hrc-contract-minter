@@ -70,7 +70,7 @@ Access: http://localhost:3000
 
 | Network | Chain ID | RPC URL | Explorer |
 |---------|----------|---------|----------|
-| Hii Testnet | 22988 | http://103.69.98.80:8545 | https://explorer.testnet.hii.network |
+| Hii Testnet | 22988 | https://rpc.testnet.hii.network | https://explorer.testnet.hii.network |
 | Hii Mainnet | 7000 | https://rpc.hii.network | https://explorer.hii.network |
 
 ## 📁 Project Structure
