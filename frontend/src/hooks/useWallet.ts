@@ -12,7 +12,7 @@ declare global {
 export const useWallet = () => {
   const [walletState, setWalletState] = useState<WalletState>(() => {
     // Restore state from localStorage if available
-  const saved = localStorage.getItem('walletState');
+    const saved = localStorage.getItem('walletState');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -57,15 +57,15 @@ export const useWallet = () => {
         chainId: parseInt(chainId, 16),
         balance: ethers.formatEther(balance),
       };
-      
+
       console.log('Wallet manually connected:', newWalletState);
-      
+
       // Update state and localStorage
       setWalletState(newWalletState);
       localStorage.setItem('walletState', JSON.stringify(newWalletState));
       setHasCheckedConnection(true);
       setManuallyDisconnected(false); // Reset manual disconnect flag
-      
+
       // Use useEffect to dispatch event after state update
       // This will be handled by the useEffect that watches walletState changes
 
@@ -95,10 +95,12 @@ export const useWallet = () => {
           console.log('wallet_revokePermissions not supported, trying alternative method');
           try {
             await window.ethereum.request({
-              method: "wallet_requestPermissions",
-              params: [{
-                eth_accounts: {}
-              }]
+              method: 'wallet_requestPermissions',
+              params: [
+                {
+                  eth_accounts: {},
+                },
+              ],
             });
           } catch (altError) {
             console.log('Alternative disconnect method also failed:', altError);
@@ -108,7 +110,7 @@ export const useWallet = () => {
     } catch (error) {
       console.log('Error during MetaMask disconnect:', error);
     }
-    
+
     // Always update local state
     const disconnectedState = {
       isConnected: false,
@@ -116,12 +118,12 @@ export const useWallet = () => {
       chainId: null,
       balance: null,
     };
-    
+
     setWalletState(disconnectedState);
     localStorage.setItem('walletState', JSON.stringify(disconnectedState));
     setHasCheckedConnection(false);
     setManuallyDisconnected(true); // Mark that user has manually disconnected
-    
+
     console.log('User manually disconnected wallet');
   }, []);
 
@@ -182,13 +184,13 @@ export const useWallet = () => {
     }
   }, [walletState.isConnected, walletState.address]);
 
-    useEffect(() => {
+  useEffect(() => {
     let isMounted = true;
 
     const handleAccountsChanged = (accounts: string[]) => {
       // Accounts changed
       if (!isMounted) return;
-      
+
       if (accounts.length === 0) {
         // Only disconnect if not due to user manual disconnect
         if (!manuallyDisconnected) {
@@ -205,7 +207,7 @@ export const useWallet = () => {
           };
           setWalletState(newState);
           localStorage.setItem('walletState', JSON.stringify(newState));
-          
+
           // Dispatch event to force re-render
           setTimeout(() => {
             window.dispatchEvent(new Event('walletStateChanged'));
@@ -217,14 +219,14 @@ export const useWallet = () => {
     const handleChainChanged = (chainId: string) => {
       // Chain changed
       if (!isMounted) return;
-      
+
       const newState = {
         ...walletState,
         chainId: parseInt(chainId, 16),
       };
       setWalletState(newState);
       localStorage.setItem('walletState', JSON.stringify(newState));
-      
+
       // Dispatch event to force re-render
       setTimeout(() => {
         window.dispatchEvent(new Event('walletStateChanged'));
@@ -239,8 +241,13 @@ export const useWallet = () => {
 
           // Check if already connected
           const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-          console.log('checkConnection - accounts:', accounts.length, 'manuallyDisconnected:', manuallyDisconnected);
-          
+          console.log(
+            'checkConnection - accounts:',
+            accounts.length,
+            'manuallyDisconnected:',
+            manuallyDisconnected
+          );
+
           if (accounts.length > 0 && isMounted && !manuallyDisconnected) {
             try {
               const chainId = await window.ethereum.request({
@@ -257,14 +264,14 @@ export const useWallet = () => {
                   chainId: parseInt(chainId, 16),
                   balance: ethers.formatEther(balance),
                 };
-                
+
                 setWalletState(newWalletState);
                 localStorage.setItem('walletState', JSON.stringify(newWalletState));
                 setHasCheckedConnection(true);
                 setManuallyDisconnected(false); // Reset manual disconnect flag
-                
+
                 console.log('Wallet auto-connected:', newWalletState);
-                
+
                 // Dispatch event to force re-render
                 setTimeout(() => {
                   window.dispatchEvent(new Event('walletStateChanged'));
@@ -300,7 +307,7 @@ export const useWallet = () => {
   useEffect(() => {
     localStorage.setItem('walletState', JSON.stringify(walletState));
     console.log('useWallet state updated:', walletState);
-    
+
     // Force component re-render when wallet state changes
     // Trigger a small delay to ensure state propagation
     setTimeout(() => {
@@ -308,8 +315,6 @@ export const useWallet = () => {
       console.log('walletStateChanged event dispatched from useEffect');
     }, 50);
   }, [walletState]);
-
-
 
   return {
     walletState,

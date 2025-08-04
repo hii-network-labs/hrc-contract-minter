@@ -22,8 +22,6 @@ export const Header: React.FC = () => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
-
-
   return (
     <header className="bg-white/80 backdrop-blur-md shadow-lg border-b border-white/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,15 +49,15 @@ export const Header: React.FC = () => {
                   <Network className="w-4 h-4 text-blue-600" />
                   <select
                     value={walletState.chainId || ''}
-                    onChange={(e) => handleSwitchNetwork(Number(e.target.value))}
+                    onChange={e => handleSwitchNetwork(Number(e.target.value))}
                     className="text-sm bg-transparent border-none focus:outline-none text-gray-700 font-medium cursor-pointer appearance-none pr-4"
                     style={{
                       WebkitAppearance: 'none',
                       MozAppearance: 'none',
-                      backgroundImage: 'none'
+                      backgroundImage: 'none',
                     }}
                   >
-                    {NETWORKS.map((network) => (
+                    {NETWORKS.map(network => (
                       <option key={network.chainId} value={network.chainId}>
                         {network.name}
                       </option>
@@ -72,21 +70,21 @@ export const Header: React.FC = () => {
                 <div className="md:hidden relative">
                   <select
                     value={walletState.chainId || ''}
-                    onChange={(e) => handleSwitchNetwork(Number(e.target.value))}
+                    onChange={e => handleSwitchNetwork(Number(e.target.value))}
                     className="text-xs bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg px-2 py-1 pr-6 focus:outline-none focus:ring-2 focus:ring-blue-300 max-w-16 truncate appearance-none"
                     style={{
                       WebkitAppearance: 'none',
                       MozAppearance: 'none',
-                      backgroundImage: 'none'
+                      backgroundImage: 'none',
                     }}
                   >
-                    {NETWORKS.map((network) => {
+                    {NETWORKS.map(network => {
                       // Create short names for mobile display
                       let mobileName = network.name;
                       if (network.name === 'Hii Mainnet') mobileName = 'Mainnet';
                       else if (network.name === 'Hii Testnet') mobileName = 'Testnet';
                       else if (network.name === 'Localhost') mobileName = 'Local';
-                      
+
                       return (
                         <option key={network.chainId} value={network.chainId}>
                           {mobileName}

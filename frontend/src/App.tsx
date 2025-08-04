@@ -39,7 +39,12 @@ const App: React.FC = () => {
   }, [walletState]);
 
   // Debug: Log render decision
-  console.log('App render - walletState.isConnected:', walletState.isConnected, 'forceRender:', forceRender);
+  console.log(
+    'App render - walletState.isConnected:',
+    walletState.isConnected,
+    'forceRender:',
+    forceRender
+  );
 
   const handleDeploySuccess = (result: DeployResult, formData?: any) => {
     setDeployResult(result);
@@ -69,7 +74,8 @@ const App: React.FC = () => {
                 Connect Wallet to Get Started
               </h2>
               <p className="text-gray-600 mb-12 max-w-lg mx-auto text-lg leading-relaxed">
-                Please connect your MetaMask wallet to deploy HRC-20 tokens or HRC-721 NFT collections on Hii Network.
+                Please connect your MetaMask wallet to deploy HRC-20 tokens or HRC-721 NFT
+                collections on Hii Network.
               </p>
 
               <div className="card-gradient max-w-2xl mx-auto">
@@ -112,7 +118,7 @@ const App: React.FC = () => {
     <>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-mesh">
         <Header />
-        
+
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-12 text-center">
             <h1 className="text-5xl font-bold gradient-text mb-6 text-shadow">
@@ -165,18 +171,18 @@ const App: React.FC = () => {
                 <NFTForm onDeploySuccess={handleDeploySuccess} />
               )}
             </div>
-            
+
             {/* Compact Info Panel */}
             <div className="lg:col-span-1 space-y-6">
               <HRCMinterInfo compact={true} />
-              
+
               {/* About Hii Network */}
               <div className="card-gradient">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold gradient-text mb-2">
-                    About Hii Network
-                  </h3>
-                  <p className="text-gray-600 text-sm">Learn about the types of smart contracts you can deploy</p>
+                  <h3 className="text-xl font-bold gradient-text mb-2">About Hii Network</h3>
+                  <p className="text-gray-600 text-sm">
+                    Learn about the types of smart contracts you can deploy
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
@@ -188,9 +194,9 @@ const App: React.FC = () => {
                     </div>
                     <ul className="text-xs text-gray-700 space-y-1">
                       <li className="flex items-center space-x-2">
-                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                         <span>HRC-20 standard</span>
-                       </li>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <span>HRC-20 standard</span>
+                      </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                         <span>Transfer & approve functions</span>
@@ -210,9 +216,9 @@ const App: React.FC = () => {
                     </div>
                     <ul className="text-xs text-gray-700 space-y-1">
                       <li className="flex items-center space-x-2">
-                         <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-                         <span>HRC-721 standard</span>
-                       </li>
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                        <span>HRC-721 standard</span>
+                      </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
                         <span>Mint, transfer, approve</span>
@@ -227,8 +233,6 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
-
-
         </main>
 
         {/* Deploy Result Modal */}
@@ -241,7 +245,7 @@ const App: React.FC = () => {
           />
         )}
       </div>
-      
+
       <Footer />
     </>
   );

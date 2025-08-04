@@ -15,20 +15,20 @@ export const Footer: React.FC = () => {
               <span>HRC Minter</span>
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Deploy HRC-20 tokens and HRC-721 NFT collections on Hii Network with ease. 
-              Built with modern technology for the decentralized future.
+              Deploy HRC-20 tokens and HRC-721 NFT collections on Hii Network with ease. Built with
+              modern technology for the decentralized future.
             </p>
             <div className="flex items-center space-x-4 pt-2">
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Github className="w-5 h-5" />
               </a>
-              <a 
-                href="mailto:hello@hii.network" 
+              <a
+                href="mailto:hello@hii.network"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
@@ -46,9 +46,9 @@ export const Footer: React.FC = () => {
               <p className="text-sm leading-relaxed">
                 Thanks to all contributors who have helped make this project better.
               </p>
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter/graphs/contributors" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter/graphs/contributors"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm"
               >
@@ -82,9 +82,9 @@ export const Footer: React.FC = () => {
                   <li>• docs/description</li>
                 </ul>
               </div>
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/CONTRIBUTING.md" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/CONTRIBUTING.md"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors duration-300 text-sm"
               >
@@ -102,25 +102,25 @@ export const Footer: React.FC = () => {
             </h3>
             <div className="space-y-3 text-gray-300 text-sm">
               <div className="space-y-2">
-                <a 
-                  href="mailto:hello@hii.network" 
+                <a
+                  href="mailto:hello@hii.network"
                   className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4" />
                   <span>hello@hii.network</span>
                 </a>
-                <a 
-                  href="https://github.com/hii-network-labs/hrc-contract-minter/issues" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/hii-network-labs/hrc-contract-minter/issues"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"
                 >
                   <Github className="w-4 h-4" />
                   <span>Report Issues</span>
                 </a>
-                <a 
-                  href="https://github.com/hii-network-labs/hrc-contract-minter/discussions" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/hii-network-labs/hrc-contract-minter/discussions"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"
                 >
@@ -144,25 +144,25 @@ export const Footer: React.FC = () => {
               </p>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter#readme" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter#readme"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-300"
               >
                 Documentation
               </a>
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/LICENSE" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/LICENSE"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-300"
               >
                 License
               </a>
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/CHANGELOG.md" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter/blob/main/CHANGELOG.md"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-300"
               >

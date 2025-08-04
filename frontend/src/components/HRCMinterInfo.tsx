@@ -10,27 +10,26 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
     return (
       <div className="card-gradient h-fit">
         <div className="text-center mb-6">
-          <h3 className="text-xl font-bold gradient-text mb-2">
-            Open Source Tool
-          </h3>
+          <h3 className="text-xl font-bold gradient-text mb-2">Open Source Tool</h3>
           <p className="text-sm text-gray-600">Deploy HRC contracts compatible with EVM</p>
         </div>
-        
+
         <div className="space-y-4">
           <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
             <p className="text-sm text-gray-700 leading-relaxed mb-3">
               Deploy <span className="font-semibold text-blue-600">HRC-20</span> and{' '}
               <span className="font-semibold text-purple-600">HRC-721</span> contracts based on{' '}
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-templates" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-templates"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 underline"
               >
                 HRC standards
-              </a> with EVM compatibility.
+              </a>{' '}
+              with EVM compatibility.
             </p>
-            
+
             <div className="flex flex-wrap gap-2 mb-3">
               <span className="inline-flex items-center px-2 py-1 rounded-lg bg-blue-100 text-blue-700 text-xs font-medium">
                 <Zap className="w-3 h-3 mr-1" />
@@ -45,10 +44,10 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
                 Open Source
               </span>
             </div>
-            
-            <a 
-              href="https://github.com/hii-network-labs/hrc-contract-minter" 
-              target="_blank" 
+
+            <a
+              href="https://github.com/hii-network-labs/hrc-contract-minter"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium"
             >
@@ -64,40 +63,41 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
   return (
     <div className="card-gradient">
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold gradient-text mb-2">
-          This is an open source tool
-        </h3>
+        <h3 className="text-2xl font-bold gradient-text mb-2">This is an open source tool</h3>
         <p className="text-gray-600">Deploy HRC-20 and HRC-721 contracts compatible with EVM</p>
       </div>
-      
+
       <div className="space-y-6">
         {/* Main Description */}
         <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
           <p className="text-gray-700 leading-relaxed mb-4">
-            Our tool allows you to deploy <span className="font-semibold text-blue-600">HRC-20</span> and{' '}
-            <span className="font-semibold text-purple-600">HRC-721</span> smart contracts on Hii Network. 
-            These contracts are based on{' '}
-            <a 
-              href="https://github.com/hii-network-labs/hrc-contract-templates" 
-              target="_blank" 
+            Our tool allows you to deploy{' '}
+            <span className="font-semibold text-blue-600">HRC-20</span> and{' '}
+            <span className="font-semibold text-purple-600">HRC-721</span> smart contracts on Hii
+            Network. These contracts are based on{' '}
+            <a
+              href="https://github.com/hii-network-labs/hrc-contract-templates"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
               HRC standards
             </a>{' '}
-            and are fully compatible with EVM, ensuring seamless integration with existing Ethereum tools and wallets.
+            and are fully compatible with EVM, ensuring seamless integration with existing Ethereum
+            tools and wallets.
           </p>
-          
+
           <p className="text-gray-700 leading-relaxed mb-4">
             For detailed instructions and in-depth explanations of all fields please see the{' '}
-            <a 
-              href="https://github.com/hii-network-labs/hrc-contract-minter#readme" 
-              target="_blank" 
+            <a
+              href="https://github.com/hii-network-labs/hrc-contract-minter#readme"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
               GitHub README
-            </a>. It includes several best practice recommendations so please take a look.
+            </a>
+            . It includes several best practice recommendations so please take a look.
           </p>
         </div>
 
@@ -111,21 +111,23 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
               <h4 className="text-xl font-semibold text-gray-900">Safe & Secure</h4>
             </div>
             <p className="text-gray-700 mb-3">
-              Never deploy code that you've never seen before! This deployer is fully open source with all smart contract code{' '}
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter/tree/main/contracts" 
-                target="_blank" 
+              Never deploy code that you've never seen before! This deployer is fully open source
+              with all smart contract code{' '}
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter/tree/main/contracts"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 underline"
               >
                 available here
-              </a>.
+              </a>
+              .
             </p>
             <p className="text-gray-700">
               The frontend interface is also{' '}
-              <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter" 
-                target="_blank" 
+              <a
+                href="https://github.com/hii-network-labs/hrc-contract-minter"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 underline"
               >
@@ -175,9 +177,9 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
               </h4>
               <p className="text-gray-700">
                 Read{' '}
-                <a 
-                  href="https://docs.hii.network/developers/security-best-practices" 
-                  target="_blank" 
+                <a
+                  href="https://docs.hii.network/developers/security-best-practices"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 underline font-medium"
                 >
@@ -199,19 +201,20 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
           </div>
           <p className="text-gray-700 mb-4">
             Learn more about HRC token standards and deployment on{' '}
-            <a 
-              href="https://docs.hii.network/developers/token-standards" 
-              target="_blank" 
+            <a
+              href="https://docs.hii.network/developers/token-standards"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
               Hii Network documentation
-            </a>.
+            </a>
+            .
           </p>
-          
-          <a 
-            href="https://github.com/hii-network-labs/hrc-contract-minter" 
-            target="_blank" 
+
+          <a
+            href="https://github.com/hii-network-labs/hrc-contract-minter"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-xl hover:from-gray-700 hover:to-gray-800 transition-all duration-300 font-medium"
           >

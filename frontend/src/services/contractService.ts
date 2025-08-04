@@ -28,7 +28,7 @@ export class ContractService {
       const totalSupply = ethers.parseUnits(formData.totalSupply, 18);
 
       let contractFactory: ethers.ContractFactory;
-      
+
       if (formData.tokenType === 'standard') {
         contractFactory = new ethers.ContractFactory(
           HRC20StandardArtifact.abi,
@@ -122,10 +122,7 @@ export class ContractService {
           totalSupply: totalSupply.toString(),
         };
       } else {
-        const [name, symbol] = await Promise.all([
-          contract.name(),
-          contract.symbol(),
-        ]);
+        const [name, symbol] = await Promise.all([contract.name(), contract.symbol()]);
 
         return {
           name,

@@ -15,11 +15,7 @@ const WalletContext = createContext<WalletContextType | undefined>(undefined);
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const walletHook = useWallet();
 
-  return (
-    <WalletContext.Provider value={walletHook}>
-      {children}
-    </WalletContext.Provider>
-  );
+  return <WalletContext.Provider value={walletHook}>{children}</WalletContext.Provider>;
 };
 
 export const useWalletContext = () => {

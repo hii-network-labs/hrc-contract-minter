@@ -35,10 +35,10 @@ export const NFTForm: React.FC<NFTFormProps> = ({ onDeploySuccess }) => {
     try {
       setDeployStep('Connecting to blockchain...');
       const contractService = new ContractService();
-      
+
       setDeployStep('Compiling NFT smart contract...');
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate compile time
-      
+
       setDeployStep('Deploying NFT collection to Hii Network...');
       const result = await contractService.deployHRC721NFT(formData);
 
@@ -65,32 +65,33 @@ export const NFTForm: React.FC<NFTFormProps> = ({ onDeploySuccess }) => {
 
   return (
     <div className="card-gradient relative">
-        {/* Loading Overlay */}
-        {isDeploying && (
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center z-50">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-                <Loader2 className="w-10 h-10 text-white animate-spin" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Deploying NFT Collection</h3>
-              <p className="text-gray-600 mb-4">{deployStep}</p>
-              <div className="w-64 bg-gray-200 rounded-full h-2 mx-auto">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full animate-pulse" style={{width: '60%'}}></div>
-              </div>
-              <p className="text-sm text-gray-500 mt-3">Please do not close this page...</p>
+      {/* Loading Overlay */}
+      {isDeploying && (
+        <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center z-50">
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+              <Loader2 className="w-10 h-10 text-white animate-spin" />
             </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Deploying NFT Collection</h3>
+            <p className="text-gray-600 mb-4">{deployStep}</p>
+            <div className="w-64 bg-gray-200 rounded-full h-2 mx-auto">
+              <div
+                className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full animate-pulse"
+                style={{ width: '60%' }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-500 mt-3">Please do not close this page...</p>
           </div>
-        )}
-        
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Image className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-2xl font-bold gradient-text mb-2">
-            Deploy HRC-721 NFT Collection
-          </h2>
-          <p className="text-gray-600">Create your own NFT collection on Hii Network</p>
         </div>
+      )}
+
+      <div className="text-center mb-8">
+        <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <Image className="w-8 h-8 text-white" />
+        </div>
+        <h2 className="text-2xl font-bold gradient-text mb-2">Deploy HRC-721 NFT Collection</h2>
+        <p className="text-gray-600">Create your own NFT collection on Hii Network</p>
+      </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -126,7 +127,9 @@ export const NFTForm: React.FC<NFTFormProps> = ({ onDeploySuccess }) => {
               maxLength={10}
               required
             />
-            <p className="text-xs text-gray-500">Short symbol for your NFT collection (max 10 characters)</p>
+            <p className="text-xs text-gray-500">
+              Short symbol for your NFT collection (max 10 characters)
+            </p>
           </div>
         </div>
 
@@ -171,7 +174,10 @@ export const NFTForm: React.FC<NFTFormProps> = ({ onDeploySuccess }) => {
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>
                   <span className="break-all text-sm leading-relaxed">
-                    TokenURI format: <span className="font-mono text-blue-600">{formData.baseURI || 'baseURI'}/tokenId</span>
+                    TokenURI format:{' '}
+                    <span className="font-mono text-blue-600">
+                      {formData.baseURI || 'baseURI'}/tokenId
+                    </span>
                   </span>
                 </li>
               </ul>

@@ -12,7 +12,12 @@ interface DeployResultProps {
   formData?: any;
 }
 
-export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose, tokenType, formData }) => {
+export const DeployResultModal: React.FC<DeployResultProps> = ({
+  result,
+  onClose,
+  tokenType,
+  formData,
+}) => {
   const { walletState } = useWalletContext();
   const [, setExplorerUrl] = useState<string>('');
 
@@ -37,8 +42,6 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
     }
   }, [result.contractAddress, walletState.chainId]);
 
-
-
   if (!result.success) {
     return (
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
@@ -50,17 +53,17 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
               </div>
               <h3 className="text-xl font-bold text-gray-900">Deploy Failed</h3>
             </div>
-            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors">
+            <button
+              onClick={onClose}
+              className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors"
+            >
               <X className="w-6 h-6" />
             </button>
           </div>
           <div className="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 rounded-2xl p-6 mb-6">
             <p className="text-red-700 leading-relaxed">{result.error}</p>
           </div>
-          <button
-            onClick={onClose}
-            className="btn-danger w-full py-3 text-lg font-semibold"
-          >
+          <button onClick={onClose} className="btn-danger w-full py-3 text-lg font-semibold">
             Close
           </button>
         </div>
@@ -81,7 +84,10 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
               <p className="text-gray-600">Your contract is now live on Hii Network</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors">
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors"
+          >
             <X className="w-6 h-6" />
           </button>
         </div>
@@ -93,15 +99,22 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-semibold text-gray-900">
-                {tokenType === 'hrc20' ? 'HRC-20 Token' : 'HRC-721 NFT Collection'} deployed successfully!
+                {tokenType === 'hrc20' ? 'HRC-20 Token' : 'HRC-721 NFT Collection'} deployed
+                successfully!
               </span>
             </div>
             {formData && (
               <div className="text-sm text-gray-600">
-                <p><strong>Name:</strong> {formData.name}</p>
-                <p><strong>Symbol:</strong> {formData.symbol}</p>
+                <p>
+                  <strong>Name:</strong> {formData.name}
+                </p>
+                <p>
+                  <strong>Symbol:</strong> {formData.symbol}
+                </p>
                 {tokenType === 'hrc20' && formData.totalSupply && (
-                  <p><strong>Total Supply:</strong> {formData.totalSupply}</p>
+                  <p>
+                    <strong>Total Supply:</strong> {formData.totalSupply}
+                  </p>
                 )}
               </div>
             )}
@@ -135,8 +148,6 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
                   </a>
                 </div>
               </div>
-
-
 
               {result.transactionHash && (
                 <div>
@@ -213,10 +224,7 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
         </div>
 
         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-8">
-          <button
-            onClick={onClose}
-            className="btn-secondary flex-1 py-3 text-lg font-semibold"
-          >
+          <button onClick={onClose} className="btn-secondary flex-1 py-3 text-lg font-semibold">
             Close
           </button>
           <button
