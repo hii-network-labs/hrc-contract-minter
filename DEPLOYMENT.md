@@ -1,24 +1,24 @@
-# Deployment Guide
+# Deployment Guide - HRC Minter
 
 ## 📋 Overview
 
-Guide to deploy Hii Token Minter v2 to different environments.
+Guide to deploy HRC Minter to different environments.
 
 ## 🚀 Production Deployment
 
 ### Prerequisites
 
-- Node.js 18+ hoặc Bun
-- Web server (Nginx, Apache, hoặc CDN)
-- Domain name (tùy chọn)
-- SSL certificate (khuyến nghị)
+- Node.js 18+ or Bun
+- Web server (Nginx, Apache, or CDN)
+- Domain name (optional)
+- SSL certificate (recommended)
 
 ### Build for Production
 
 ```bash
 # Clone repository
 git clone https://github.com/hii-network-labs/hrc-contract-minter.git
-cd hii-token-minter-v2
+cd hii-token-minter
 
 # Install dependencies
 bun install
@@ -172,13 +172,13 @@ Create `.env.production` file in `frontend/` directory:
 VITE_HII_TESTNET_API_KEY=your_testnet_api_key
 VITE_HII_MAINNET_API_KEY=your_mainnet_api_key
 
-# Analytics (tùy chọn)
+# Analytics (optional)
 VITE_GA_TRACKING_ID=your_google_analytics_id
 ```
 
 ## 📊 Monitoring & Analytics
 
-### Google Analytics (tùy chọn)
+### Google Analytics (optional)
 
 1. **Add to `index.html`**:
 ```html
@@ -194,7 +194,7 @@ VITE_GA_TRACKING_ID=your_google_analytics_id
 
 ### Error Monitoring
 
-Khuyến nghị sử dụng:
+Recommended to use:
 - [Sentry](https://sentry.io/) cho error tracking
 - [LogRocket](https://logrocket.com/) cho session replay
 

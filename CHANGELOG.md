@@ -1,4 +1,4 @@
-# Changelog
+# Changelog - HRC Minter
 
 All notable changes to this project will be documented in this file.
 
@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial release of Hii Token Minter v2
+- Initial release of HRC Minter
 - HRC-20 token deployment (Standard & Full)
 - HRC-721 NFT collection deployment
 - MetaMask wallet integration

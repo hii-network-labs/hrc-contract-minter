@@ -1,4 +1,4 @@
-# Hii Token Minter v2
+# HRC Minter
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -9,7 +9,7 @@
 
 Frontend application to deploy HRC-20 tokens and HRC-721 NFTs on Hii Network.
 
-[![Hii Token Minter](https://img.shields.io/badge/Hii%20Network-Testnet%20%7C%20Mainnet-green.svg)](https://hii.network)
+[![HRC Minter](https://img.shields.io/badge/Hii%20Network-Testnet%20%7C%20Mainnet-green.svg)](https://hii.network)
 
 ## 📋 Table of Contents
 
@@ -45,7 +45,7 @@ Frontend application to deploy HRC-20 tokens and HRC-721 NFTs on Hii Network.
 
 ```bash
 git clone https://github.com/hii-network-labs/hrc-contract-minter.git
-cd hii-token-minter-v2
+cd hii-token-minter
 bun install
 ```
 
@@ -76,7 +76,7 @@ Access: http://localhost:3000
 ## 📁 Project Structure
 
 ```
-hii-token-minter-v2/
+hii-token-minter/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/          # React components
@@ -170,7 +170,7 @@ bun run type-check       # TypeScript type checking
 - **TypeScript**: Type safety
 - **EditorConfig**: Consistent coding style
 
-### Pre-commit Hooks (Khuyến nghị)
+### Pre-commit Hooks (Recommended)
 
 ```bash
 # Install husky for git hooks

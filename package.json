@@ -1,5 +1,5 @@
 {
-  "name": "hii-token-minter-v2",
+  "name": "hrc-minter",
   "version": "1.0.0",
   "description": "Frontend application to deploy HRC-20 tokens and HRC-721 NFTs on Hii Network",
   "private": false,
@@ -28,7 +28,7 @@
     "metamask",
     "web3"
   ],
-  "author": "Hii Token Minter Team",
+  "author": "Hii Network",
   "license": "MIT",
   "repository": {
     "type": "git",

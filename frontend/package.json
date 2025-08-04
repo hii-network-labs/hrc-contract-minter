@@ -1,7 +1,7 @@
 {
-  "name": "hii-token-minter-frontend",
+  "name": "hrc-minter-frontend",
   "version": "1.0.0",
-  "description": "Frontend for HRC-20 Token Minter on Hii Network",
+  "description": "Frontend for HRC Minter on Hii Network",
   "private": true,
   "scripts": {
     "dev": "bun run vite",
@@ -39,5 +39,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
-  }
+  },
+  "author": "Hii Network",
+  "license": "MIT"
 }

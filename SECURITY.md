@@ -1,4 +1,4 @@
-# Security Policy
+# Security Policy - HRC Minter
 
 ## Supported Versions
 
@@ -17,7 +17,7 @@ We take security seriously and welcome security vulnerability reports from the c
 **DO NOT** create public issues for security vulnerabilities. Instead:
 
 1. **Email**: Send email to [security@hii.network](mailto:security@hii.network)
-2. **Subject**: `[SECURITY] Hii Token Minter v2 - [Brief Description]`
+2. **Subject**: `[SECURITY] HRC Minter - [Brief Description]`
 3. **Include**:
    - Detailed description of the vulnerability
    - Steps to reproduce
@@ -80,4 +80,4 @@ Thanks to security researchers who have contributed:
 
 ---
 
-**Thank you for helping keep Hii Token Minter secure! 🔒**
+**Thank you for helping keep HRC Minter secure! 🔒**

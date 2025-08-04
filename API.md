@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-API documentation for Hii Token Minter v2, including interfaces, types, and services.
+API documentation for HRC Minter, including interfaces, types, and services.
 
 ## 🔧 Core Services
 
@@ -96,7 +96,7 @@ interface HRC721Info {
 
 ```typescript
 interface NetworkConfig {
-  name: string;           // Tên network
+  name: string;           // Network name
   chainId: number;        // Chain ID
   rpcUrl: string;         // RPC endpoint
   explorerUrl: string;    // Block explorer URL
@@ -357,7 +357,7 @@ function safeTransferFrom(address from, address to, uint256 tokenId) public
 
 ## 📞 Support
 
-Nếu cần hỗ trợ về API:
+For API support:
 - [GitHub Issues](https://github.com/hii-network-labs/hrc-contract-minter/issues)
 - [GitHub Discussions](https://github.com/hii-network-labs/hrc-contract-minter/discussions)
 - [Documentation](https://github.com/hii-network-labs/hrc-contract-minter#readme)

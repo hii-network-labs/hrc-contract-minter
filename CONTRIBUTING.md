@@ -1,6 +1,6 @@
-# Contributing to Hii Token Minter
+# Contributing to HRC Minter
 
-Thank you for your interest in contributing to Hii Token Minter! 🚀
+Thank you for your interest in contributing to HRC Minter! 🚀
 
 ## 📋 Table of Contents
 
