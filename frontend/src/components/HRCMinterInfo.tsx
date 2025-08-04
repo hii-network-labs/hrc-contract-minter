@@ -22,12 +22,12 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
               Deploy <span className="font-semibold text-blue-600">HRC-20</span> and{' '}
               <span className="font-semibold text-purple-600">HRC-721</span> contracts based on{' '}
               <a 
-                href="https://github.com/hii-network-labs/hrc-contract-minter#token-standards" 
+                href="https://github.com/hii-network-labs/hrc-contract-templates" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 underline"
               >
-                ERC standards
+                HRC standards
               </a> with EVM compatibility.
             </p>
             
@@ -78,12 +78,12 @@ const HRCMinterInfo: React.FC<HRCMinterInfoProps> = ({ compact = false }) => {
             <span className="font-semibold text-purple-600">HRC-721</span> smart contracts on Hii Network. 
             These contracts are based on{' '}
             <a 
-              href="https://github.com/hii-network-labs/hrc-contract-minter#token-standards" 
+              href="https://github.com/hii-network-labs/hrc-contract-templates" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              ERC standards
+              HRC standards
             </a>{' '}
             and are fully compatible with EVM, ensuring seamless integration with existing Ethereum tools and wallets.
           </p>
