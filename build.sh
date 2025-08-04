@@ -1,41 +1,41 @@
 #!/bin/bash
 
 # HRC-20 Token Minter Build Script
-# Tự động build frontend với Bun
+# Automatically build frontend with Bun
 
 set -e
 
-echo "🚀 Bắt đầu build HRC-20 Token Minter Frontend..."
+echo "🚀 Starting HRC-20 Token Minter Frontend build..."
 
-# Kiểm tra Bun có được cài đặt không
+# Check if Bun is installed
 if ! command -v bun &> /dev/null; then
-    echo "❌ Bun chưa được cài đặt. Vui lòng cài đặt Bun trước:"
+    echo "❌ Bun is not installed. Please install Bun first:"
     echo "   curl -fsSL https://bun.sh/install | bash"
     exit 1
 fi
 
-echo "✅ Bun đã được cài đặt: $(bun --version)"
+echo "✅ Bun is installed: $(bun --version)"
 
-# Di chuyển vào thư mục frontend
+# Move to frontend directory
 cd frontend
 
-# Cài đặt dependencies nếu chưa có
+# Install dependencies if not already installed
 if [ ! -d "node_modules" ]; then
-    echo "📦 Cài đặt dependencies..."
+    echo "📦 Installing dependencies..."
     bun install
 else
-    echo "✅ Dependencies đã được cài đặt"
+    echo "✅ Dependencies installed"
 fi
 
 # Build project
-echo "🔨 Đang build project..."
+echo "🔨 Building project..."
 bun run build
 
-echo "✅ Build hoàn thành!"
-echo "📁 Output được lưu trong: frontend/dist/"
+echo "✅ Build completed!"
+echo "📁 Output saved in: frontend/dist/"
 echo ""
-echo "🌐 Để chạy development server:"
+echo "🌐 To run development server:"
 echo "   cd frontend && bun run dev"
 echo ""
-echo "📦 Để preview build:"
-echo "   cd frontend && bun run preview" 
+echo "📦 To preview build:"
+echo "   cd frontend && bun run preview"

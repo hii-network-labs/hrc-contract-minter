@@ -7,18 +7,24 @@
     "dev": "bun run vite",
     "build": "bun run tsc && bun run vite build",
     "preview": "bun run vite preview",
-    "lint": "bun run eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "bun run eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "bun run eslint . --ext ts,tsx --fix",
+    "format": "bun run prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "bun run prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "type-check": "bun run tsc --noEmit"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "clsx": "^2.1.0",
+    "ethers": "^6.15.0",
+    "lucide-react": "^0.344.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ethers": "^6.15.0",
     "react-router-dom": "^6.22.0",
-    "lucide-react": "^0.344.0",
-    "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@types/minimatch": "^6.0.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -29,6 +35,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.35",
+    "prettier": "^3.6.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"

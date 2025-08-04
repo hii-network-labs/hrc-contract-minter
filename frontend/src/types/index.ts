@@ -14,7 +14,6 @@ export interface TokenFormData {
   name: string;
   symbol: string;
   totalSupply: string;
-  decimals: number;
   tokenType: 'standard' | 'full';
 }
 
@@ -36,4 +35,4 @@ export interface DeployResult {
   contractAddress?: string;
   transactionHash?: string;
   error?: string;
-} 
+}

@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.0+-purple.svg)](https://vitejs.dev/)
 
-Frontend application để deploy HRC-20 tokens và HRC-721 NFTs trên Hii Network.
+Frontend application to deploy HRC-20 tokens and HRC-721 NFTs on Hii Network.
 
 [![Hii Token Minter](https://img.shields.io/badge/Hii%20Network-Testnet%20%7C%20Mainnet-green.svg)](https://hii.network)
 
@@ -19,30 +19,32 @@ Frontend application để deploy HRC-20 tokens và HRC-721 NFTs trên Hii Netwo
 - [Usage](#-usage)
 - [Networks](#-networks)
 - [Project Structure](#-project-structure)
+- [Development](#-development)
+- [Documentation](#-documentation)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
 - [License](#-license)
 
-## 🚀 Tính năng
+## 🚀 Features
 
-- ✅ Kết nối MetaMask wallet
+- ✅ Connect MetaMask wallet
 - ✅ Deploy HRC-20 tokens (Standard & Full)
 - ✅ Deploy HRC-721 NFT collections
-- ✅ Hỗ trợ Hii Testnet và Mainnet
-- ✅ UI/UX hiện đại với Tailwind CSS
+- ✅ Support Hii Testnet and Mainnet
+- ✅ Modern UI/UX with Tailwind CSS
 
-## 📋 Yêu cầu
+## 📋 Requirements
 
-- Node.js 18+ hoặc Bun
+- Node.js 18+ or Bun
 - MetaMask wallet
-- API key cho explorer (tùy chọn)
+- API key for explorer (optional)
 
-## 🛠️ Cài đặt
+## 🛠️ Installation
 
-### 1. Clone và cài đặt dependencies
+### 1. Clone and install dependencies
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/hii-network-labs/hrc-contract-minter.git
 cd hii-token-minter-v2
 bun install
 ```
@@ -50,19 +52,19 @@ bun install
 ### 2. Copy contract artifacts
 
 ```bash
-# Copy ABI và bytecode từ HRC-20 project
+# Copy ABI and bytecode from HRC-20 project
 ./copy-contracts.sh
 ```
 
 
 
-### 3. Chạy development server
+### 3. Run development server
 
 ```bash
 bun run dev
 ```
 
-Truy cập: http://localhost:3000
+Access: http://localhost:3000
 
 ## 🌐 Networks
 
@@ -71,7 +73,7 @@ Truy cập: http://localhost:3000
 | Hii Testnet | 22988 | http://103.69.98.80:8545 | https://explorer.testnet.hii.network |
 | Hii Mainnet | 7000 | https://rpc.hii.network | https://explorer.hii.network |
 
-## 📁 Cấu trúc Project
+## 📁 Project Structure
 
 ```
 hii-token-minter-v2/
@@ -82,8 +84,13 @@ hii-token-minter-v2/
 │   │   ├── hooks/              # Custom hooks
 │   │   ├── config/             # Network configs
 │   │   ├── contracts/          # Contract ABIs & bytecodes
+│   │   ├── contexts/           # React contexts
 │   │   └── types/              # TypeScript types
+│   ├── .eslintrc.json          # ESLint configuration
+│   ├── .prettierrc             # Prettier configuration
 │   └── package.json
+├── docs/                       # Documentation
+├── .github/                    # GitHub templates & workflows
 ├── copy-contracts.sh           # Copy contract artifacts
 ├── build.sh                    # Build script
 ├── package.json                # Root package.json
@@ -92,78 +99,119 @@ hii-token-minter-v2/
 
 ## 🔍 Troubleshooting
 
-### Lỗi "MetaMask không được cài đặt"
-- Cài đặt MetaMask extension
-- Refresh trang web
+### Error "MetaMask not installed"
+- Install MetaMask extension
+- Refresh the webpage
 
-### Lỗi "Network không được hỗ trợ"
-- Thêm network vào MetaMask
-- Hoặc chuyển sang network được hỗ trợ
+### Error "Network not supported"
+- Add network to MetaMask
+- Or switch to a supported network
 
-### Lỗi "Insufficient balance"
-- Đảm bảo có đủ HII tokens để trả gas fee
-- Kiểm tra balance trong MetaMask
+### Error "Insufficient balance"
+- Ensure you have enough HII tokens for gas fees
+- Check balance in MetaMask
 
-### Lỗi "Contract deployment failed"
-- Kiểm tra network connection
-- Đảm bảo có đủ gas fee
-- Thử deploy lại sau vài phút
+### Error "Contract deployment failed"
+- Check network connection
+- Ensure sufficient gas fees
+- Try deploying again after a few minutes
 
-## 🎯 Ví dụ sử dụng
+## 🎯 Usage Examples
 
 ### Deploy HRC-20 Token
 
-1. Kết nối MetaMask
-2. Chọn network (Testnet/Mainnet)
-3. Điền thông tin token:
+1. Connect MetaMask
+2. Select network (Testnet/Mainnet)
+3. Fill token information:
    - Name: "My Token"
    - Symbol: "MTK"
    - Total Supply: 1000000
    - Decimals: 18
 4. Click "Deploy Token"
-5. Confirm transaction trong MetaMask
-6. Copy contract address để sử dụng
+5. Confirm transaction in MetaMask
+6. Copy contract address for use
 
 ### Deploy HRC-721 NFT
 
-1. Kết nối MetaMask
-2. Chọn network (Testnet/Mainnet)
-3. Thông tin collection (được hardcode):
+1. Connect MetaMask
+2. Select network (Testnet/Mainnet)
+3. Collection information (hardcoded):
    - Name: "MyNFT" (fixed)
    - Symbol: "MNFT" (fixed)
-   - Base URI: Optional (có thể set sau)
+   - Base URI: Optional (can be set later)
 4. Click "Deploy NFT Collection"
-5. Confirm transaction trong MetaMask
-6. Copy contract address để sử dụng
+5. Confirm transaction in MetaMask
+6. Copy contract address for use
 
-## 📝 Scripts
+## 🛠️ Development
+
+### Scripts
 
 ```bash
 # Development
 bun run dev              # Start development server
 bun run build            # Build for production
 bun run preview          # Preview production build
+bun run test             # Run tests
+
+# Code Quality
+cd frontend
+bun run lint             # Run ESLint
+bun run lint:fix         # Fix ESLint errors
+bun run format           # Format code with Prettier
+bun run format:check     # Check code formatting
+bun run type-check       # TypeScript type checking
 ```
+
+### Code Quality Standards
+
+- **ESLint**: Code linting with TypeScript support
+- **Prettier**: Code formatting
+- **TypeScript**: Type safety
+- **EditorConfig**: Consistent coding style
+
+### Pre-commit Hooks (Khuyến nghị)
+
+```bash
+# Install husky for git hooks
+bun add -D husky lint-staged
+
+# Setup pre-commit hook
+echo '#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+lint-staged' > .husky/pre-commit
+```
+
+## 📚 Documentation
+
+- **[API Documentation](API.md)** - Details about interfaces and services
+- **[Deployment Guide](DEPLOYMENT.md)** - Production deployment guide
+- **[Contract Verification](docs/VERIFICATION.md)** - Guide to verify contracts
+- **[Contributing Guide](CONTRIBUTING.md)** - Contribution process
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Code of conduct
+- **[Security Policy](SECURITY.md)** - Security policy
+- **[Changelog](CHANGELOG.md)** - Change history
 
 ## 🤝 Contributing
 
-Chúng tôi hoan nghênh mọi đóng góp! Vui lòng đọc [CONTRIBUTING.md](CONTRIBUTING.md) để biết thêm chi tiết về cách đóng góp cho dự án này.
+We welcome all contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details on how to contribute to this project.
 
 ### Quick Start
 
-1. Fork project
-2. Tạo feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Tạo Pull Request
+1. Fork the project
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
 ### Code of Conduct
 
-Dự án này tuân theo [Code of Conduct](CODE_OF_CONDUCT.md). Bằng cách tham gia, bạn được mong đợi sẽ tuân thủ code này.
+This project follows the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## 📄 License
 
-Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -177,10 +225,10 @@ Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE
 
 ## 📞 Support
 
-- [GitHub Issues](https://github.com/your-username/hii-token-minter-v2/issues)
-- [GitHub Discussions](https://github.com/your-username/hii-token-minter-v2/discussions)
-- [Documentation](https://github.com/your-username/hii-token-minter-v2#readme)
+- [GitHub Issues](https://github.com/hii-network-labs/hrc-contract-minter/issues)
+- [GitHub Discussions](https://github.com/hii-network-labs/hrc-contract-minter/discussions)
+- [Documentation](https://github.com/hii-network-labs/hrc-contract-minter#readme)
 
 ---
 
-**Made with ❤️ for the Hii Network community** 
+**Made with ❤️ for the Hii Network community**

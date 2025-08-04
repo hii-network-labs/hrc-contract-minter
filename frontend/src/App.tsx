@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Coins, Image, Info, Wallet } from 'lucide-react';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { TokenForm } from './components/TokenForm';
 import { NFTForm } from './components/NFTForm';
+import { TONMinterInfo } from './components/TONMinterInfo';
 import { DeployResultModal } from './components/DeployResult';
 import { DeployResult } from './types';
-import { useWallet } from './hooks/useWallet';
+import { useWalletContext } from './contexts/WalletContext';
 
 type TabType = 'token' | 'nft';
 
@@ -14,32 +16,30 @@ const App: React.FC = () => {
   const [deployResult, setDeployResult] = useState<DeployResult | null>(null);
   const [tokenType, setTokenType] = useState<'hrc20' | 'hrc721'>('hrc20');
   const [deployFormData, setDeployFormData] = useState<any>(null);
-  const { walletState, connectWallet } = useWallet();
+  const [forceRender, setForceRender] = useState(0);
+  const { walletState } = useWalletContext();
 
-  // Debug log
-  console.log('Wallet state:', walletState);
-
-  // Force check connection khi component mount (chỉ chạy một lần)
-  React.useEffect(() => {
-    const checkWalletConnection = async () => {
-      if (window.ethereum && !walletState.isConnected) {
-        try {
-          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-          console.log('Force checking accounts:', accounts);
-          if (accounts.length > 0) {
-            console.log('Force connecting wallet...');
-            await connectWallet();
-          }
-        } catch (error) {
-          console.error('Error force checking wallet:', error);
-        }
-      }
+  // Listen for wallet state changes to force re-render
+  useEffect(() => {
+    const handleWalletStateChanged = () => {
+      console.log('App received walletStateChanged event, forcing re-render');
+      setForceRender(prev => prev + 1);
     };
 
-    // Chỉ chạy sau 1 giây để tránh race condition
-    const timer = setTimeout(checkWalletConnection, 1000);
-    return () => clearTimeout(timer);
-  }, []); // Empty dependency array - chỉ chạy một lần
+    window.addEventListener('walletStateChanged', handleWalletStateChanged);
+    return () => {
+      window.removeEventListener('walletStateChanged', handleWalletStateChanged);
+    };
+  }, []);
+
+  // Debug: Log wallet state changes
+  useEffect(() => {
+    console.log('App wallet state changed:', walletState);
+    console.log('App walletState.isConnected:', walletState.isConnected);
+  }, [walletState]);
+
+  // Debug: Log render decision
+  console.log('App render - walletState.isConnected:', walletState.isConnected, 'forceRender:', forceRender);
 
   const handleDeploySuccess = (result: DeployResult, formData?: any) => {
     setDeployResult(result);
@@ -57,161 +57,200 @@ const App: React.FC = () => {
 
   if (!walletState.isConnected) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Header />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <div className="mx-auto w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mb-6">
-              <Wallet className="w-12 h-12 text-gray-400" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Kết nối ví để bắt đầu
-            </h2>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              Vui lòng kết nối ví MetaMask để deploy HRC-20 token hoặc HRC-721 NFT collection trên Hii Network.
-            </p>
-            <div className="mb-6">
-              <p className="text-sm text-gray-500 mb-2">Debug: {walletState.isConnected ? 'Connected' : 'Not connected'}</p>
-              <p className="text-sm text-gray-500">Address: {walletState.address || 'None'}</p>
-              <p className="text-sm text-gray-500">Chain ID: {walletState.chainId || 'None'}</p>
-              <div className="flex space-x-2">
-                <button 
-                  onClick={() => window.location.reload()} 
-                  className="text-sm text-blue-600 hover:text-blue-800 underline"
-                >
-                  Refresh Page
-                </button>
-                <button 
-                  onClick={connectWallet} 
-                  className="text-sm text-green-600 hover:text-green-800 underline"
-                >
-                  Force Connect
-                </button>
-                <button 
-                  onClick={() => {
-                    localStorage.removeItem('walletState');
-                    window.location.reload();
-                  }} 
-                  className="text-sm text-red-600 hover:text-red-800 underline"
-                >
-                  Clear & Reload
-                </button>
+      <>
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-mesh">
+          <Header />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="text-center">
+              <div className="mx-auto w-32 h-32 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl flex items-center justify-center mb-8 floating-animation shadow-2xl">
+                <Wallet className="w-16 h-16 text-blue-600" />
               </div>
-            </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-lg mx-auto">
-              <div className="flex items-start space-x-3">
-                <Info className="w-5 h-5 text-blue-600 mt-0.5" />
-                <div className="text-left">
-                  <h3 className="text-sm font-medium text-blue-900 mb-2">Hướng dẫn:</h3>
-                  <ul className="text-sm text-blue-800 space-y-1">
-                    <li>• Cài đặt MetaMask extension</li>
-                    <li>• Click "Connect Wallet" ở góc trên bên phải</li>
-                    <li>• Chọn network Hii Mainnet hoặc Testnet</li>
-                    <li>• Đảm bảo có đủ HII để trả phí gas</li>
-                  </ul>
+              <h2 className="text-4xl font-bold gradient-text mb-6 text-shadow">
+                Connect Wallet to Get Started
+              </h2>
+              <p className="text-gray-600 mb-12 max-w-lg mx-auto text-lg leading-relaxed">
+                Please connect your MetaMask wallet to deploy HRC-20 tokens or HRC-721 NFT collections on Hii Network.
+              </p>
+
+              <div className="card-gradient max-w-2xl mx-auto">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <Info className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Connection Guide:</h3>
+                    <ul className="text-gray-700 space-y-3">
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span>Install MetaMask extension</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span>Click "Connect Wallet" in the top right corner</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span>Select Hii Mainnet or Testnet network</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span>Ensure you have enough HII for gas fees</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
-            Deploy Smart Contract
-          </h1>
-          <p className="text-gray-600">
-            Tạo HRC-20 token hoặc HRC-721 NFT collection trên Hii Network
-          </p>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="mb-8">
-          <div className="border-b border-gray-200">
-            <nav className="-mb-px flex space-x-8">
-              <button
-                onClick={() => handleTabChange('token')}
-                className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
-                  activeTab === 'token'
-                    ? 'border-primary-500 text-primary-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                <Coins className="w-4 h-4" />
-                <span>HRC-20 Token</span>
-              </button>
-              <button
-                onClick={() => handleTabChange('nft')}
-                className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
-                  activeTab === 'nft'
-                    ? 'border-primary-500 text-primary-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                <Image className="w-4 h-4" />
-                <span>HRC-721 NFT</span>
-              </button>
-            </nav>
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 bg-mesh">
+        <Header />
+        
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="mb-12 text-center">
+            <h1 className="text-5xl font-bold gradient-text mb-6 text-shadow">
+              Deploy Smart Contract
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Create HRC-20 tokens or HRC-721 NFT collections on Hii Network with a modern interface
+            </p>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="max-w-4xl">
-          {activeTab === 'token' ? (
-            <TokenForm onDeploySuccess={handleDeploySuccess} />
-          ) : (
-            <NFTForm onDeploySuccess={handleDeploySuccess} />
-          )}
-        </div>
-
-        {/* Info Section */}
-        <div className="mt-12 max-w-4xl">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Thông tin về Hii Network
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">HRC-20 Token</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Tương thích với ERC-20 standard</li>
-                  <li>• Hỗ trợ transfer, approve, allowance</li>
-                  <li>• Có thể thêm mint, burn, pause (Full version)</li>
-                  <li>• Phí gas thấp hơn Ethereum</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">HRC-721 NFT</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Tương thích với ERC-721 standard</li>
-                  <li>• Hỗ trợ mint, transfer, approve</li>
-                  <li>• Metadata URI cho từng token</li>
-                  <li>• Phù hợp cho game và collectibles</li>
-                </ul>
+          {/* Tab Navigation */}
+          <div className="mb-12">
+            <div className="flex justify-center">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-xl border border-white/20">
+                <nav className="flex space-x-2">
+                  <button
+                    onClick={() => handleTabChange('token')}
+                    className={`py-4 px-8 rounded-xl font-semibold text-sm flex items-center space-x-3 transition-all duration-300 ${
+                      activeTab === 'token'
+                        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transform scale-105'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    <Coins className="w-5 h-5" />
+                    <span>HRC-20 Token</span>
+                  </button>
+                  <button
+                    onClick={() => handleTabChange('nft')}
+                    className={`py-4 px-8 rounded-xl font-semibold text-sm flex items-center space-x-3 transition-all duration-300 ${
+                      activeTab === 'nft'
+                        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg transform scale-105'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    <Image className="w-5 h-5" />
+                    <span>HRC-721 NFT</span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
-        </div>
-      </main>
 
-      {/* Deploy Result Modal */}
-      {deployResult && (
-        <DeployResultModal
-          result={deployResult}
-          onClose={handleCloseResult}
-          tokenType={tokenType}
-          formData={deployFormData}
-        />
-      )}
-    </div>
+          {/* Content */}
+          <div className="max-w-4xl mx-auto">
+            {activeTab === 'token' ? (
+              <TokenForm onDeploySuccess={handleDeploySuccess} />
+            ) : (
+              <NFTForm onDeploySuccess={handleDeploySuccess} />
+            )}
+          </div>
+
+          {/* Info Section */}
+          <div className="mt-16 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              {/* Hii Network Info */}
+              <div className="card-gradient">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold gradient-text mb-2">
+                    About Hii Network
+                  </h3>
+                  <p className="text-gray-600">Learn about the types of smart contracts you can deploy</p>
+                </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                        <Coins className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-gray-900">HRC-20 Token</h4>
+                    </div>
+                    <ul className="text-gray-700 space-y-3">
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>Compatible with ERC-20 standard</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>Supports transfer, approve, allowance</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>Can add mint, burn, pause (Full version)</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>Lower gas fees</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Image className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-gray-900">HRC-721 NFT</h4>
+                    </div>
+                    <ul className="text-gray-700 space-y-3">
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span>Compatible with ERC-721 standard</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span>Supports mint, transfer, approve</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span>Metadata URI for each token</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span>Perfect for games and collectibles</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              {/* TON Minter Info */}
+              <TONMinterInfo />
+            </div>
+          </div>
+        </main>
+
+        {/* Deploy Result Modal */}
+        {deployResult && (
+          <DeployResultModal
+            result={deployResult}
+            onClose={handleCloseResult}
+            tokenType={tokenType}
+            formData={deployFormData}
+          />
+        )}
+      </div>
+      
+      <Footer />
+    </>
   );
 };
 
-export { App }; 
+export { App };

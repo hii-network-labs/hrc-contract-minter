@@ -10,7 +10,7 @@ export class ContractService {
 
   constructor() {
     if (!window.ethereum) {
-      throw new Error('MetaMask không được cài đặt');
+      throw new Error('MetaMask is not installed');
     }
     this.provider = new ethers.BrowserProvider(window.ethereum);
   }
@@ -25,7 +25,7 @@ export class ContractService {
   async deployHRC20Token(formData: TokenFormData): Promise<DeployResult> {
     try {
       const signer = await this.getSigner();
-      const totalSupply = ethers.parseUnits(formData.totalSupply, formData.decimals);
+      const totalSupply = ethers.parseUnits(formData.totalSupply, 18);
 
       let contractFactory: ethers.ContractFactory;
       
@@ -60,10 +60,10 @@ export class ContractService {
         transactionHash: deploymentTransaction?.hash,
       };
     } catch (error: any) {
-      console.error('Lỗi khi deploy HRC-20 token:', error);
+      // Error deploying HRC-20 token
       return {
         success: false,
-        error: error.message || 'Lỗi không xác định',
+        error: error.message || 'Unknown error',
       };
     }
   }
@@ -79,6 +79,8 @@ export class ContractService {
       );
 
       const contract = await contractFactory.deploy(
+        formData.name,
+        formData.symbol,
         await signer.getAddress()
       );
 
@@ -92,10 +94,10 @@ export class ContractService {
         transactionHash: deploymentTransaction?.hash,
       };
     } catch (error: any) {
-      console.error('Lỗi khi deploy HRC-721 NFT:', error);
+      // Error deploying HRC-721 NFT
       return {
         success: false,
-        error: error.message || 'Lỗi không xác định',
+        error: error.message || 'Unknown error',
       };
     }
   }
@@ -131,8 +133,8 @@ export class ContractService {
         };
       }
     } catch (error) {
-      console.error('Lỗi khi lấy thông tin token:', error);
+      // Error getting token info
       throw error;
     }
   }
-} 
+}

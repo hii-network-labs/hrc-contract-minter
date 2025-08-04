@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, ExternalLink, Copy, X } from 'lucide-react';
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 import { DeployResult } from '../types';
 import { getNetworkByChainId } from '../config/networks';
-import { useWallet } from '../hooks/useWallet';
+import { useWalletContext } from '../contexts/WalletContext';
 
 interface DeployResultProps {
   result: DeployResult;
@@ -13,8 +13,8 @@ interface DeployResultProps {
 }
 
 export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose, tokenType, formData }) => {
-  const { walletState } = useWallet();
-  const [explorerUrl, setExplorerUrl] = useState<string>('');
+  const { walletState } = useWalletContext();
+  const [, setExplorerUrl] = useState<string>('');
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -30,7 +30,7 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
     return `${network?.explorerUrl}/tx/${txHash}`;
   };
 
-  // Set explorer URL khi component mount
+  // Set explorer URL when component mounts
   useEffect(() => {
     if (result.success && result.contractAddress && walletState.chainId) {
       setExplorerUrl(getExplorerUrl(result.contractAddress));
@@ -41,20 +41,25 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
 
   if (!result.success) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">Deploy Failed</h3>
-            <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
-              <X className="w-5 h-5" />
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 max-w-md w-full shadow-2xl border border-white/20">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                <X className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">Deploy Failed</h3>
+            </div>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors">
+              <X className="w-6 h-6" />
             </button>
           </div>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <p className="text-sm text-red-600">{result.error}</p>
+          <div className="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 rounded-2xl p-6 mb-6">
+            <p className="text-red-700 leading-relaxed">{result.error}</p>
           </div>
           <button
             onClick={onClose}
-            className="btn-secondary w-full mt-4"
+            className="btn-danger w-full py-3 text-lg font-semibold"
           >
             Close
           </button>
@@ -64,48 +69,69 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 max-w-lg w-full mx-4">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">Deploy Successful!</h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
-            <X className="w-5 h-5" />
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 max-w-2xl w-full shadow-2xl border border-white/20 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center space-x-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center floating-animation">
+              <CheckCircle className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold gradient-text">Deploy Successful!</h3>
+              <p className="text-gray-600">Your contract is now live on Hii Network</p>
+            </div>
+          </div>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-2 rounded-xl hover:bg-gray-100 transition-colors">
+            <X className="w-6 h-6" />
           </button>
         </div>
 
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2 text-green-600">
-            <CheckCircle className="w-5 h-5" />
-            <span className="font-medium">
-              {tokenType === 'hrc20' ? 'HRC-20 Token' : 'HRC-721 NFT Collection'} đã được deploy thành công!
-            </span>
+        <div className="space-y-6">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-6">
+            <div className="flex items-center space-x-3 mb-3">
+              <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-lg font-semibold text-gray-900">
+                {tokenType === 'hrc20' ? 'HRC-20 Token' : 'HRC-721 NFT Collection'} deployed successfully!
+              </span>
+            </div>
+            {formData && (
+              <div className="text-sm text-gray-600">
+                <p><strong>Name:</strong> {formData.name}</p>
+                <p><strong>Symbol:</strong> {formData.symbol}</p>
+                {tokenType === 'hrc20' && formData.totalSupply && (
+                  <p><strong>Total Supply:</strong> {formData.totalSupply}</p>
+                )}
+              </div>
+            )}
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-4">
-            <div className="space-y-3">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
+            <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-800 mb-3">
                   Contract Address:
                 </label>
-                <div className="flex items-center space-x-2">
-                  <code className="flex-1 bg-white border border-gray-300 rounded px-2 py-1 text-sm font-mono">
+                <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-xl p-3 border border-white/30">
+                  <code className="flex-1 text-sm font-mono text-gray-800 break-all">
                     {result.contractAddress}
                   </code>
                   <button
                     onClick={() => copyToClipboard(result.contractAddress!)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-blue-600 hover:text-blue-700 p-2 rounded-lg hover:bg-blue-100 transition-colors"
                     title="Copy address"
                   >
-                    <Copy className="w-4 h-4" />
+                    <Copy className="w-5 h-5" />
                   </button>
                   <a
                     href={getExplorerUrl(result.contractAddress!)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-primary-700"
+                    className="text-blue-600 hover:text-blue-700 p-2 rounded-lg hover:bg-blue-100 transition-colors"
                     title="View on explorer"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
               </div>
@@ -114,28 +140,28 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
 
               {result.transactionHash && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-semibold text-gray-800 mb-3">
                     Transaction Hash:
                   </label>
-                  <div className="flex items-center space-x-2">
-                    <code className="flex-1 bg-white border border-gray-300 rounded px-2 py-1 text-sm font-mono">
+                  <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-xl p-3 border border-white/30">
+                    <code className="flex-1 text-sm font-mono text-gray-800 break-all">
                       {result.transactionHash}
                     </code>
                     <button
                       onClick={() => copyToClipboard(result.transactionHash!)}
-                      className="text-gray-400 hover:text-gray-600"
+                      className="text-blue-600 hover:text-blue-700 p-2 rounded-lg hover:bg-blue-100 transition-colors"
                       title="Copy transaction hash"
                     >
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-5 h-5" />
                     </button>
                     <a
                       href={getTransactionUrl(result.transactionHash!)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700"
+                      className="text-blue-600 hover:text-blue-700 p-2 rounded-lg hover:bg-blue-100 transition-colors"
                       title="View transaction"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
@@ -143,42 +169,65 @@ export const DeployResultModal: React.FC<DeployResultProps> = ({ result, onClose
             </div>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="text-sm font-medium text-blue-900 mb-2">Next Steps:</h4>
-            <ul className="text-xs text-blue-800 space-y-1">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-6">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm">→</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900">Next Steps:</h4>
+            </div>
+            <ul className="text-gray-700 space-y-3">
               {tokenType === 'hrc20' ? (
                 <>
-                  <li>• Thêm token vào ví MetaMask</li>
-                  <li>• Chia sẻ contract address với cộng đồng</li>
-                  <li>• Tạo liquidity pool trên DEX</li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Add token to MetaMask wallet</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Share contract address with community</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Create liquidity pool on DEX</span>
+                  </li>
                 </>
               ) : (
                 <>
-                  <li>• Mint NFT đầu tiên bằng cách gọi hàm mint()</li>
-                  <li>• Upload metadata lên IPFS hoặc server</li>
-                  <li>• Chia sẻ collection với cộng đồng</li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Mint first NFT by calling mint() function</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Upload metadata to IPFS or server</span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Share collection with community</span>
+                  </li>
                 </>
               )}
             </ul>
           </div>
         </div>
 
-        <div className="flex space-x-3 mt-6">
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-8">
           <button
             onClick={onClose}
-            className="btn-secondary flex-1"
+            className="btn-secondary flex-1 py-3 text-lg font-semibold"
           >
             Close
           </button>
           <button
             onClick={() => copyToClipboard(result.contractAddress!)}
-            className="btn-primary flex-1 flex items-center justify-center space-x-2"
+            className="btn-primary flex-1 flex items-center justify-center space-x-3 py-3 text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
-            <Copy className="w-4 h-4" />
+            <Copy className="w-5 h-5" />
             <span>Copy Address</span>
           </button>
         </div>
       </div>
     </div>
   );
-}; 
+};

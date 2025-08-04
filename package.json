@@ -32,14 +32,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/hii-token-minter-v2.git"
+    "url": "https://github.com/hii-network-labs/hrc-contract-minter.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/hii-token-minter-v2/issues"
+    "url": "https://github.com/hii-network-labs/hrc-contract-minter/issues"
   },
-  "homepage": "https://github.com/your-username/hii-token-minter-v2#readme",
+  "homepage": "https://github.com/hii-network-labs/hrc-contract-minter#readme",
   "engines": {
     "node": ">=18.0.0",
     "bun": ">=1.0.0"
   }
-} 
+}

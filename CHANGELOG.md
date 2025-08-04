@@ -1,9 +1,9 @@
 # Changelog
 
-Tất cả các thay đổi quan trọng cho dự án này sẽ được ghi lại trong file này.
+All notable changes to this project will be documented in this file.
 
-Format dựa trên [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-và dự án này tuân theo [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
@@ -82,8 +82,8 @@ và dự án này tuân theo [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## Contributing
 
-Xem [CONTRIBUTING.md](CONTRIBUTING.md) để biết thông tin về cách đóng góp cho dự án này.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute to this project.
 
 ## License
 
-Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

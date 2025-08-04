@@ -42,7 +42,7 @@ export const getNetworkByChainId = (chainId: number): NetworkConfig | undefined 
 
 export const addNetworkToMetaMask = async (network: NetworkConfig): Promise<boolean> => {
   if (!window.ethereum) {
-    throw new Error('MetaMask không được cài đặt');
+    throw new Error('MetaMask is not installed');
   }
 
   try {
@@ -60,7 +60,7 @@ export const addNetworkToMetaMask = async (network: NetworkConfig): Promise<bool
     });
     return true;
   } catch (error) {
-    console.error('Lỗi khi thêm network:', error);
+    // Error adding network
     return false;
   }
-}; 
+};

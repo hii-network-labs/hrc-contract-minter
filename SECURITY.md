@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Dự án này hỗ trợ các phiên bản sau với các bản cập nhật bảo mật:
+This project supports the following versions with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,46 +10,46 @@ Dự án này hỗ trợ các phiên bản sau với các bản cập nhật b�
 
 ## Reporting a Vulnerability
 
-Chúng tôi coi trọng bảo mật và hoan nghênh báo cáo về các lỗ hổng bảo mật từ cộng đồng.
+We take security seriously and welcome security vulnerability reports from the community.
 
 ### 🔒 How to Report
 
-**KHÔNG** tạo issue công khai cho các lỗ hổng bảo mật. Thay vào đó:
+**DO NOT** create public issues for security vulnerabilities. Instead:
 
-1. **Email**: Gửi email đến [security@hii.network](mailto:security@hii.network)
+1. **Email**: Send email to [security@hii.network](mailto:security@hii.network)
 2. **Subject**: `[SECURITY] Hii Token Minter v2 - [Brief Description]`
 3. **Include**:
-   - Mô tả chi tiết về lỗ hổng
-   - Các bước để tái tạo
-   - Tác động tiềm năng
-   - Đề xuất fix (nếu có)
+   - Detailed description of the vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Suggested fix (if any)
 
 ### 📋 What to Include
 
-- **Mô tả lỗ hổng**: Chi tiết về vấn đề bảo mật
-- **Severity**: Mức độ nghiêm trọng (Low/Medium/High/Critical)
-- **Proof of Concept**: Code hoặc steps để tái tạo
-- **Impact**: Tác động tiềm năng đến users
+- **Vulnerability Description**: Details about the security issue
+- **Severity**: Severity level (Low/Medium/High/Critical)
+- **Proof of Concept**: Code or steps to reproduce
+- **Impact**: Potential impact on users
 - **Environment**: Browser, OS, version
 
 ### ⏱️ Response Timeline
 
 - **Initial Response**: 24-48 hours
 - **Assessment**: 3-5 business days
-- **Fix Development**: 1-2 weeks (tùy thuộc vào complexity)
-- **Public Disclosure**: Sau khi fix được deploy
+- **Fix Development**: 1-2 weeks (depending on complexity)
+- **Public Disclosure**: After fix is deployed
 
 ### 🏆 Recognition
 
-Contributors báo cáo lỗ hổng bảo mật hợp lệ sẽ được:
+Contributors who report valid security vulnerabilities will receive:
 
-- Ghi nhận trong [SECURITY.md](SECURITY.md)
-- Thêm vào [Hall of Fame](#hall-of-fame)
-- Nhận credit trong release notes
+- Recognition in [SECURITY.md](SECURITY.md)
+- Addition to [Hall of Fame](#hall-of-fame)
+- Credit in release notes
 
 ## Hall of Fame
 
-Cảm ơn các security researchers đã đóng góp:
+Thanks to security researchers who have contributed:
 
 <!-- Add security researchers here -->
 
@@ -57,27 +57,27 @@ Cảm ơn các security researchers đã đóng góp:
 
 ### For Users
 
-- Luôn verify contract addresses trước khi deploy
-- Sử dụng MetaMask với các network đáng tin cậy
-- Không chia sẻ private keys hoặc seed phrases
-- Test trên testnet trước khi deploy lên mainnet
+- Always verify contract addresses before deploying
+- Use MetaMask with trusted networks
+- Never share private keys or seed phrases
+- Test on testnet before deploying to mainnet
 
 ### For Developers
 
-- Audit smart contracts trước khi deploy
-- Sử dụng latest versions của dependencies
+- Audit smart contracts before deployment
+- Use latest versions of dependencies
 - Implement proper access controls
-- Test edge cases và error conditions
+- Test edge cases and error conditions
 
 ## Security Checklist
 
-- [ ] Smart contracts được audit
-- [ ] Dependencies được update thường xuyên
-- [ ] Access controls được implement đúng cách
-- [ ] Error handling được test kỹ lưỡng
-- [ ] Input validation được implement
-- [ ] Gas limits được set phù hợp
+- [ ] Smart contracts are audited
+- [ ] Dependencies are regularly updated
+- [ ] Access controls are properly implemented
+- [ ] Error handling is thoroughly tested
+- [ ] Input validation is implemented
+- [ ] Gas limits are appropriately set
 
 ---
 
-**Thank you for helping keep Hii Token Minter secure! 🔒** 
+**Thank you for helping keep Hii Token Minter secure! 🔒**

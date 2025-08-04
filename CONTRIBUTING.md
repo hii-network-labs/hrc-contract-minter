@@ -1,99 +1,57 @@
 # Contributing to Hii Token Minter
 
-Cảm ơn bạn đã quan tâm đến việc đóng góp cho Hii Token Minter! 🚀
+Thank you for your interest in contributing to Hii Token Minter! 🚀
 
 ## 📋 Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
 - [How Can I Contribute?](#how-can-i-contribute)
-- [Development Setup](#development-setup)
 - [Pull Request Process](#pull-request-process)
 - [Reporting Bugs](#reporting-bugs)
 - [Suggesting Enhancements](#suggesting-enhancements)
 
 ## 🤝 Code of Conduct
 
-Dự án này và những người đóng góp của nó tuân theo [Code of Conduct](CODE_OF_CONDUCT.md). Bằng cách tham gia, bạn được mong đợi sẽ tuân thủ code này.
+This project and its contributors adhere to the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## 💡 How Can I Contribute?
 
 ### 🐛 Reporting Bugs
 
-- Sử dụng [GitHub Issues](https://github.com/your-username/hii-token-minter-v2/issues)
-- Kiểm tra xem bug đã được báo cáo chưa
-- Cung cấp thông tin chi tiết về bug:
-  - Mô tả rõ ràng về vấn đề
-  - Các bước để tái tạo bug
-  - Screenshots (nếu có)
-  - Browser và OS version
+- Use [GitHub Issues](https://github.com/hii-network-labs/hrc-contract-minter/issues)
+- Check if the bug has already been reported
+- Provide detailed information about the bug:
+  - Clear description of the issue
+  - Steps to reproduce the bug
+  - Screenshots (if applicable)
+  - Browser and OS version
 
 ### ✨ Suggesting Enhancements
 
-- Tạo feature request trên GitHub Issues
-- Mô tả chi tiết tính năng mong muốn
-- Giải thích lý do tại sao tính năng này hữu ích
-- Đề xuất cách implement (nếu có)
+- Create a feature request on GitHub Issues
+- Describe the desired feature in detail
+- Explain why this feature would be useful
+- Suggest implementation approach (if any)
 
 ### 🔧 Pull Requests
 
 - Fork repository
-- Tạo feature branch: `git checkout -b feature/amazing-feature`
+- Create feature branch: `git checkout -b feature/amazing-feature`
 - Commit changes: `git commit -m 'Add amazing feature'`
 - Push to branch: `git push origin feature/amazing-feature`
-- Tạo Pull Request
+- Create Pull Request
 
-## 🛠️ Development Setup
 
-### Prerequisites
-
-- Node.js 18+ hoặc Bun
-- MetaMask extension
-- Git
-
-### Installation
-
-```bash
-# Clone repository
-git clone https://github.com/your-username/hii-token-minter-v2.git
-cd hii-token-minter-v2
-
-# Install dependencies
-bun install
-
-# Copy contract artifacts
-./copy-contracts.sh
-
-# Start development server
-bun run dev
-```
-
-### Project Structure
-
-```
-hii-token-minter-v2/
-├── frontend/
-│   ├── src/
-│   │   ├── components/          # React components
-│   │   ├── services/           # API services
-│   │   ├── hooks/              # Custom hooks
-│   │   ├── config/             # Network configs
-│   │   ├── contracts/          # Contract ABIs
-│   │   └── types/              # TypeScript types
-│   └── package.json
-├── copy-contracts.sh           # Copy contract artifacts
-├── build.sh                    # Build script
-└── README.md
-```
 
 ## 📝 Pull Request Process
 
-1. **Fork và clone** repository
-2. **Tạo branch** cho feature/fix của bạn
-3. **Code changes** theo coding standards
-4. **Test** changes của bạn
-5. **Commit** với message rõ ràng
-6. **Push** lên branch của bạn
-7. **Tạo Pull Request** với description chi tiết
+1. **Fork and clone** repository
+2. **Create branch** for your feature/fix
+3. **Code changes** following coding standards
+4. **Test** your changes
+5. **Commit** with clear message
+6. **Push** to your branch
+7. **Create Pull Request** with detailed description
 
 ### Commit Message Format
 
@@ -111,11 +69,11 @@ chore: maintenance tasks
 
 ### Code Standards
 
-- Sử dụng TypeScript
-- Tuân thủ ESLint rules
-- Viết comments cho code phức tạp
-- Test changes của bạn
-- Cập nhật documentation nếu cần
+- Use TypeScript
+- Follow ESLint rules
+- Write comments for complex code
+- Test your changes
+- Update documentation if needed
 
 ## 🧪 Testing
 
@@ -132,10 +90,10 @@ bun run build
 
 ## 📚 Documentation
 
-- Cập nhật README.md nếu cần
-- Thêm comments cho code mới
-- Cập nhật API documentation
-- Thêm examples nếu cần
+- Update README.md if needed
+- Add comments for new code
+- Update API documentation
+- Add examples if needed
 
 ## 🎯 Areas for Contribution
 
@@ -160,21 +118,75 @@ bun run build
 
 ## 🏷️ Release Process
 
-1. Update version trong `package.json`
+1. Update version in `package.json`
 2. Update CHANGELOG.md
 3. Create release tag
 4. Deploy to production
 
 ## 📞 Getting Help
 
-- [GitHub Issues](https://github.com/your-username/hii-token-minter-v2/issues)
-- [Discussions](https://github.com/your-username/hii-token-minter-v2/discussions)
-- [Documentation](https://github.com/your-username/hii-token-minter-v2#readme)
+- [GitHub Issues](https://github.com/hii-network-labs/hrc-contract-minter/issues)
+- [Discussions](https://github.com/hii-network-labs/hrc-contract-minter/discussions)
+- [Documentation](https://github.com/hii-network-labs/hrc-contract-minter#readme)
 
 ## 🙏 Acknowledgments
 
-Cảm ơn tất cả contributors đã đóng góp cho dự án này!
+Thank you to all contributors who have contributed to this project!
+
+## 👥 Contributors
+
+We appreciate all the contributors who have helped make this project better:
+
+- View all contributors on [GitHub Contributors](https://github.com/hii-network-labs/hrc-contract-minter/graphs/contributors)
+- Special thanks to the community for bug reports and feature suggestions
+
+## 📧 Contact
+
+For questions or support:
+
+- **Email**: hello@hii.network
+- **GitHub Issues**: [Report Issues](https://github.com/hii-network-labs/hrc-contract-minter/issues)
+- **GitHub Discussions**: [Community Discussions](https://github.com/hii-network-labs/hrc-contract-minter/discussions)
+
+## 🔧 Git Guidelines
+
+### Commit Message Format
+
+We follow conventional commits format:
+
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, etc.)
+- `refactor`: Code refactoring
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks
+
+**Examples:**
+```
+feat(token): add ERC-721 collection minting
+fix(ui): resolve wallet connection issue
+docs(readme): update installation instructions
+```
+
+### Branch Naming
+
+- `feature/description` - for new features
+- `fix/description` - for bug fixes
+- `docs/description` - for documentation updates
+- `refactor/description` - for code refactoring
 
 ---
 
-**Happy Contributing! 🎉** 
+© 2025 Hii Network Labs. All rights reserved.
+
+**Happy Contributing! 🎉**

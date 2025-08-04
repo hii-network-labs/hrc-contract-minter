@@ -8,7 +8,7 @@ assignees: ''
 
 ## 🐛 Bug Description
 
-Mô tả rõ ràng về bug.
+A clear description of the bug.
 
 ## 🔄 Steps to Reproduce
 
@@ -19,11 +19,11 @@ Mô tả rõ ràng về bug.
 
 ## ✅ Expected Behavior
 
-Mô tả những gì bạn mong đợi sẽ xảy ra.
+Describe what you expected to happen.
 
 ## ❌ Actual Behavior
 
-Mô tả những gì thực sự xảy ra.
+Describe what actually happened.
 
 ## 📱 Environment
 
@@ -34,15 +34,15 @@ Mô tả những gì thực sự xảy ra.
 
 ## 📸 Screenshots
 
-Nếu có thể, hãy thêm screenshots để giải thích vấn đề của bạn.
+If possible, add screenshots to explain your problem.
 
 ## 🔧 Additional Context
 
-Thêm bất kỳ context nào khác về vấn đề ở đây.
+Add any other context about the problem here.
 
 ## 📋 Checklist
 
-- [ ] Tôi đã kiểm tra xem bug này đã được báo cáo chưa
-- [ ] Tôi đã cung cấp thông tin chi tiết về môi trường
-- [ ] Tôi đã mô tả các bước để tái tạo bug
-- [ ] Tôi đã đính kèm screenshots (nếu có) 
+- [ ] I have checked if this bug has already been reported
+- [ ] I have provided detailed environment information
+- [ ] I have described the steps to reproduce the bug
+- [ ] I have attached screenshots (if applicable)

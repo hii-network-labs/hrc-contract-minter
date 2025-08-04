@@ -1,6 +1,6 @@
 ## 📝 Description
 
-Mô tả ngắn gọn về những thay đổi trong PR này.
+Brief description of the changes in this PR.
 
 ## 🔄 Type of Change
 
@@ -14,11 +14,11 @@ Mô tả ngắn gọn về những thay đổi trong PR này.
 
 ## 🧪 Testing
 
-- [ ] Tôi đã test changes trên local environment
-- [ ] Tôi đã test với MetaMask wallet
-- [ ] Tôi đã test deploy HRC-20 tokens
-- [ ] Tôi đã test deploy HRC-721 NFTs
-- [ ] Tôi đã test trên cả Testnet và Mainnet
+- [ ] I have tested changes on local environment
+- [ ] I have tested with MetaMask wallet
+- [ ] I have tested deploying HRC-20 tokens
+- [ ] I have tested deploying HRC-721 NFTs
+- [ ] I have tested on both Testnet and Mainnet
 
 ## 📱 Browser Testing
 
@@ -29,18 +29,18 @@ Mô tả ngắn gọn về những thay đổi trong PR này.
 
 ## 📋 Checklist
 
-- [ ] Code của tôi tuân thủ style guidelines của dự án
-- [ ] Tôi đã tự review code của mình
-- [ ] Tôi đã comment code, đặc biệt là những phần khó hiểu
-- [ ] Tôi đã tạo documentation tương ứng cho thay đổi
-- [ ] Changes của tôi không tạo ra warnings mới
-- [ ] Tôi đã thêm tests cho code mới
-- [ ] Tôi đã test changes của mình và chúng hoạt động bình thường
-- [ ] Tôi đã cập nhật CHANGELOG.md nếu cần
+- [ ] My code follows the project's style guidelines
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests for new code
+- [ ] I have tested my changes and they work correctly
+- [ ] I have updated CHANGELOG.md if needed
 
 ## 📸 Screenshots
 
-Nếu có thay đổi UI, hãy thêm screenshots:
+If there are UI changes, add screenshots:
 
 ## 🔗 Related Issues
 
@@ -48,4 +48,4 @@ Closes #(issue number)
 
 ## 📚 Additional Notes
 
-Thêm bất kỳ ghi chú nào khác về PR này. 
+Add any other notes about this PR.
