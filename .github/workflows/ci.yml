@@ -68,26 +68,26 @@ jobs:
           exit 1
         fi
 
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+  # deploy:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
 
-    steps:
-    - uses: actions/checkout@v4
+  #   steps:
+  #   - uses: actions/checkout@v4
 
-    - name: Setup Bun
-      uses: oven-sh/setup-bun@v1
-      with:
-        bun-version: latest
+  #   - name: Setup Bun
+  #     uses: oven-sh/setup-bun@v1
+  #     with:
+  #       bun-version: latest
 
-    - name: Install dependencies
-      run: |
-        bun install
-        cd frontend && bun install
+  #   - name: Install dependencies
+  #     run: |
+  #       bun install
+  #       cd frontend && bun install
 
-    - name: Copy contract artifacts
-      run: ./copy-contracts.sh
+  #   - name: Copy contract artifacts
+  #     run: ./copy-contracts.sh
 
-    - name: Build
-      run: bun run build
+  #   - name: Build
+  #     run: bun run build
